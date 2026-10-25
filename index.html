@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 5 - JavaScript Basics (DOM Manipulation & Events)</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <span class="badge-tag">ASSIGNMENT 5</span>
+      <h1>JavaScript Basics: DOM Manipulation & Events</h1>
+      <p class="subtitle">Interactive web page with dynamic updates and array management</p>
+    </header>
+
+    <nav class="tab-navigation">
+      <button class="tab-btn active" data-tab="part1">Profile & Arithmetic</button>
+      <button class="tab-btn" data-tab="part2">Form Input & Events</button>
+      <button class="tab-btn" data-tab="part3">DOM List Manipulation</button>
+      <button class="tab-btn" data-tab="console">Console Logs</button>
+    </nav>
+
+    <main class="tab-content-container">
+
+      <section class="card tab-pane active" id="part1">
+        <div class="card-header">
+          <span class="part-subtitle">PART 01</span>
+          <h2>Personal Information & Dynamic Calculations</h2>
+        </div>
+        <div class="profile-details">
+          <div class="detail-row">
+            <span class="label">Name:</span>
+            <span class="value" id="displayName">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="label">Birth Year:</span>
+            <span class="value" id="displayBirthYear">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="label">Is Developer?:</span>
+            <span class="value badge-status" id="displayIsDev">-</span>
+          </div>
+          
+          <div class="divider"></div>
+          
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <span class="metric-val" id="displayAge">0</span>
+              <span class="metric-lbl">Calculated Age</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-val" id="displayMonths">0</span>
+              <span class="metric-lbl">Age in Months</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-val" id="displayHobbiesCount">0</span>
+              <span class="metric-lbl">Total Hobbies</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="card tab-pane" id="part2">
+        <div class="card-header">
+          <span class="part-subtitle">PART 02</span>
+          <h2>Form Input & Event Responses</h2>
+        </div>
+        <form id="profileForm">
+          <div class="form-group">
+            <label for="usernameInput">Username: *</label>
+            <input type="text" id="usernameInput" placeholder="e.g. Alina Ibadulla" required>
+          </div>
+          <div class="form-group">
+            <label for="birthYearInput">Birth Year: *</label>
+            <input type="number" id="birthYearInput" placeholder="e.g. 2005" required>
+          </div>
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="isDevInput" checked>
+            <label for="isDevInput">Is Developer?</label>
+          </div>
+          <button type="submit" class="btn primary-btn" id="updateProfileBtn">create / update Profile</button>
+        </form>
+      </section>
+
+
+      <section class="card tab-pane" id="part3">
+        <div class="card-header">
+          <span class="part-subtitle">PART 03</span>
+          <h2>DOM List Manipulation</h2>
+        </div>
+        <div class="list-controls">
+          <div class="form-group">
+            <label for="hobbyInput">New Item / hobby:</label>
+            <div class="input-with-btn">
+              <input type="text" id="hobbyInput" placeholder="e.g. baking, reading...">
+              <button type="button" class="btn primary-btn" id="addItemBtn">Add Item</button>
+            </div>
+          </div>
+          <button type="button" class="btn danger-btn" id="removeItemBtn">Remove last item</button>
+        </div>
+        <ul id="hobbiesList" class="hobbies-list"></ul>
+      </section>
+
+
+      <section class="card tab-pane" id="console">
+        <div class="card-header">
+          <span class="part-subtitle">SYSTEM LOGS</span>
+          <h2>Console Output</h2>
+          <button class="clear-btn" id="clearLogsBtn">Clear Logs</button>
+        </div>
+        <div class="console-box" id="consoleLog"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
